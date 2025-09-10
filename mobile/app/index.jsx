@@ -1,5 +1,5 @@
-import { Link } from "expo-router";
-import React, { useState } from "react";
+import React from "react";
+import { useRouter, Link } from "expo-router";
 import {
   View,
   Text,
@@ -9,9 +9,12 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const index = ({}) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export default function index() {
+
+  const router = useRouter();
+  const handleLogin = () => {
+    router.replace("/tab/library");
+  };
 
   return (
     <View style={styles.container}>
@@ -28,8 +31,6 @@ const index = ({}) => {
         style={styles.input}
         placeholder="Email"
         keyboardType="email-address"
-        value={email}
-        onChangeText={setEmail}
       />
 
       
@@ -37,8 +38,6 @@ const index = ({}) => {
         style={styles.input}
         placeholder="Password"
         secureTextEntry
-        value={password}
-        onChangeText={setPassword}
       />
 
       
@@ -47,7 +46,7 @@ const index = ({}) => {
       </TouchableOpacity>
 
       
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
 
@@ -60,6 +59,7 @@ const index = ({}) => {
         </Text>
         </Link>
       </Text>
+      
 
       
       <View style={styles.divider} />
@@ -67,13 +67,13 @@ const index = ({}) => {
 
       
       <View style={styles.socialContainer}>
-        <Image source={require("../app/logos_facebook.png")} style={styles.icon} />
-        <Image source={require("../app/Vector.png")} style={styles.icon} />
-        <Image source={require("../app/grommet-icons_google.png")} style={styles.icon} />
+        <Image source={require("../app/facebook.png")} style={styles.icon} />
+        <Image source={require("../app/linkedin.png")} style={styles.icon} />
+        <Image source={require("../app/google.png")} style={styles.icon} />
       </View>
     </View>
   );
-};
+} 
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#F4EBD0", padding: 20 },
@@ -107,5 +107,3 @@ const styles = StyleSheet.create({
   },
   icon: { width: 40, height: 40, marginHorizontal: 10, resizeMode: "contain" },
 });
-
-export default index;

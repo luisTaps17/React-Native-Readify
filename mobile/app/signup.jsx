@@ -1,5 +1,5 @@
-import { Link } from "expo-router";
-import React, { useState } from "react";
+import React from "react";
+import { useRouter, Link } from "expo-router";
 import {
   View,
   Text,
@@ -8,10 +8,12 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const signup = ({}) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export default function signup() {
+
+  const router = useRouter();
+  const handleLogin = () => {
+    router.replace("/");
+  };
 
   return (
     <View style={styles.container}>
@@ -20,37 +22,33 @@ const signup = ({}) => {
       <TextInput
         style={styles.input}
         placeholder="Name"
-        value={name}
-        onChangeText={setName}
       />
 
       <TextInput
         style={styles.input}
         placeholder="Email"
         keyboardType="email-address"
-        value={email}
-        onChangeText={setEmail}
       />
 
       <TextInput
         style={styles.input}
         placeholder="Password"
         secureTextEntry
-        value={password}
-        onChangeText={setPassword}
       />
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Sign up</Text>
       </TouchableOpacity>
 
       <Text style={styles.footer}>
         Already have an account?{" "}
+        <TouchableOpacity>
         <Link href="/">
         <Text style={{color: "orange"}}>
           Login
         </Text>
         </Link>
+        </TouchableOpacity>
       </Text>
     </View>
   );
@@ -78,5 +76,3 @@ const styles = StyleSheet.create({
   footer: { textAlign: "center", marginTop: 20, fontSize: 14 },
   link: { color: "blue", fontWeight: "600" },
 });
-
-export default signup;
