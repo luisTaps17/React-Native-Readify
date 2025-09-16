@@ -4,7 +4,7 @@ import React from 'react'
 const library = () => {
   return (
     <View>
-      <Text>library</Text>
+      <Text>library is da won</Text>
     </View>
   )
 }
