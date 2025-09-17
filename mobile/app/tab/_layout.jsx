@@ -43,24 +43,6 @@ export default function TabsLayout() {
         )
       }}
       />
-      <Tabs.Screen 
-            name="exit"
-            options={{
-                title:"Exit",
-                tabBarIcon: ({color, size}) => (
-                    <Ionicons name="log-out-outline" size={size} color={color} />
-                ),
-
-                tabBarButton: ({children, style}) => (
-                    <TouchableOpacity  onPress={handleLogin}    style={style}>
-                    {children}
-                    </TouchableOpacity> 
-
-                ),
-                
-            }}
-
-        />
     </Tabs>   
   )
 }

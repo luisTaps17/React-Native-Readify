@@ -1,4 +1,3 @@
-// app/browse.jsx
 import React from "react";
 import {
   View,
@@ -14,7 +13,6 @@ import { Video } from 'expo-av';
 export default function Browse() {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      {/* Header */}
       <View style={styles.header}>
         <Ionicons name="menu" size={24} color="#000" />
         <Image
@@ -24,9 +22,8 @@ export default function Browse() {
         <Ionicons name="search" size={24} color="#000" />
       </View>
 
-      {/* Featured banner */}
       <Video
-  source={require("../tab/img/mount.mp4")}  // replace your GIF with an mp4 version
+  source={require("../tab/img/mount.mp4")}
   style={styles.banner}
   resizeMode="cover"
   shouldPlay
@@ -34,7 +31,6 @@ export default function Browse() {
   isMuted
 />
 
-      {/* Category pills */}
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -50,7 +46,6 @@ export default function Browse() {
         </TouchableOpacity>
       </ScrollView>
 
-      {/* Manga cards */}
       <View style={styles.cardGrid}>
         {[
           {
@@ -63,7 +58,7 @@ export default function Browse() {
             title: "Legend of The Northern Blade",
             chap: "New! Chap 45",
             genre: "Action • Murim",
-            img: require("../tab/img/lonb.jpg"),
+            img: require("../tab/img/legend.jpg"),
           },
           {
             title: "Gachiakuta,",
@@ -108,7 +103,7 @@ const styles = StyleSheet.create({
   },
   headerTitle: { fontSize: 20, fontWeight: "700", marginTop: 30, },
   logo: {
-    width: 120,   // adjust to your logo size
+    width: 120,
     height: 40,
   },
   banner: {
@@ -116,7 +111,7 @@ const styles = StyleSheet.create({
     height: 150,
     borderRadius: 10,
     marginBottom: 15,
-    borderWidth: 2,        // thickness of the border
+    borderWidth: 2,
     borderColor: "#000",
   },
   categories: { flexDirection: "row", marginBottom: 15 },
