@@ -1,13 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import { useRouter, Link } from "expo-router";
-import { TouchableOpacity } from "react-native";
 
 export default function TabsLayout() {
-    const router = useRouter();
-    const handleLogin = () => {
-    router.replace("/");
-  };
 
   return (
     <Tabs
