@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: 15,
+    marginTop: 20,
   },
   headerTitle: { fontSize: 20, fontWeight: "700", marginTop: 30, },
   logo: {
