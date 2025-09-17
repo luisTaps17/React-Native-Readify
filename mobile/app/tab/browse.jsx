@@ -8,7 +8,8 @@ import {
   Image,
   ScrollView,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons"; // for menu + search icons
+import { Ionicons } from "@expo/vector-icons";
+import { Video } from 'expo-av';
 
 export default function Browse() {
   return (
@@ -16,15 +17,22 @@ export default function Browse() {
       {/* Header */}
       <View style={styles.header}>
         <Ionicons name="menu" size={24} color="#000" />
-        <Text style={styles.headerTitle}>Readify</Text>
+        <Image
+          source={require("../tab/img/logo.png")}style={styles.logo}
+          resizeMode="contain"
+        />
         <Ionicons name="search" size={24} color="#000" />
       </View>
 
       {/* Featured banner */}
-      <Image
-        source={require ("../tab/img/mount.jpg")}
-        style={styles.banner}
-      />
+      <Video
+  source={require("../tab/img/mount.mp4")}  // replace your GIF with an mp4 version
+  style={styles.banner}
+  resizeMode="cover"
+  shouldPlay
+  isLooping
+  isMuted
+/>
 
       {/* Category pills */}
       <ScrollView
@@ -54,20 +62,26 @@ export default function Browse() {
           {
             title: "Legend of The Northern Blade",
             chap: "New! Chap 45",
-            genre: "Romance • Slice of Life",
-            img: require("../tab/img/dandadan.jpg"),
+            genre: "Action • Murim",
+            img: require("../tab/img/lonb.jpg"),
           },
           {
-            title: "Don’t Blush,",
+            title: "Gachiakuta,",
             chap: "New! Chap 24",
-            genre: "Romance • Comedy",
-            img: require("../tab/img/dandadan.jpg"),
+            genre: "Action • Shounen",
+            img: require("../tab/img/gachi.jpg"),
           },
           {
-            title: "Demon Lord",
+            title: "Berserk",
             chap: "New! Chap 78",
             genre: "Fantasy • Action",
-            img: require("../tab/img/dandadan.jpg"),
+            img: require("../tab/img/bers.jpg"),
+          },
+          {
+            title: "Evangelion",
+            chap: "New! Chap 78",
+            genre: "Mecha • Mature",
+            img: require("../tab/img/evang.jpg"),
           },
         ].map((manga, i) => (
           <View key={i} style={styles.card}>
@@ -92,12 +106,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 15,
   },
-  headerTitle: { fontSize: 20, fontWeight: "700" },
+  headerTitle: { fontSize: 20, fontWeight: "700", marginTop: 30, },
+  logo: {
+    width: 120,   // adjust to your logo size
+    height: 40,
+  },
   banner: {
     width: "100%",
     height: 150,
     borderRadius: 10,
     marginBottom: 15,
+    borderWidth: 2,        // thickness of the border
+    borderColor: "#000",
   },
   categories: { flexDirection: "row", marginBottom: 15 },
   chip: {
@@ -140,7 +160,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 6,
     paddingVertical: 2,
   },
-  badgeText: { color: "#fff", fontSize: 10, fontWeight: "600" },
-  cardTitle: { fontWeight: "700", fontSize: 14 },
-  cardGenre: { fontSize: 12, color: "#555" },
+  badgeText: { 
+    color: "#fff", 
+    fontSize: 10, 
+    fontWeight: "600" 
+    },
+  cardTitle: { 
+    fontWeight: "700", 
+    fontSize: 14,
+  },
+  cardGenre: { 
+    fontSize: 12, 
+    color: "#555" 
+  },
 });
