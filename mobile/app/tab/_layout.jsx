@@ -1,3 +1,4 @@
+import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 
@@ -6,8 +7,12 @@ export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor:'#00204A',
-        headerShown: false, 
+        tabBarActiveTintColor:'#b1a992ff',
+        headerShown: false,
+        tabBarStyle: {
+          backgroundColor: "#332f23ff",
+          borderTopWidth: 0,
+        },
      }}
      >
       <Tabs.Screen

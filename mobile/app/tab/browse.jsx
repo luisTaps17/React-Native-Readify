@@ -94,7 +94,7 @@ export default function Browse() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#fff", padding: 15 },
+  container: { flex: 1, backgroundColor: "#F4EBD0", padding: 15 },
   header: {
     flexDirection: "row",
     justifyContent: "space-between",

@@ -1,4 +1,3 @@
-// app/library.jsx
 import React from "react";
 import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 
@@ -52,7 +51,7 @@ export default function Library() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#fff", padding: 15 },
+  container: { flex: 1, backgroundColor: "#F4EBD0", padding: 15 },
   header: {
     marginBottom: 15,
     alignItems: "center", // center horizontally
