@@ -37,6 +37,6 @@ const styles = StyleSheet.create({
   fontWeight: "800",
   letterSpacing: 1,
   color: "#333",
-  fontFamily: "Playfair", // custom font
+  fontFamily: "PoppinsBold", 
 },
 });
