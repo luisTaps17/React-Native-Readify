@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   exitText: {
     fontSize: 18,
     color: "#333",
-    marginLeft: 10,
+    marginLeft: 12,
   },
 });
 
