@@ -17,32 +17,31 @@ const menuItems = [
   {
     title: "General",
     icon: "settings-outline",
+    route: "/moretabs/general",
   },
   {
     title: "Appearance",
     icon: "color-palette-outline",
+    route: "/moretabs/appearance",
   },
-  {
-    title: "Downloads",
-    icon: "download-outline",
-  },
+  
   {
     title: "Share",
     icon: "share-social-outline",
   },
-  {
-    title: "Help",
-    icon: "help-circle-outline",
-  },
+ 
   {
     title: "Discord Server",
-    icon: "chatbubbles-outline",
+    icon: "logo-discord",
+    link: "https://discord.com" 
   },
   {
     title: "About",
     icon: "information-circle-outline",
+    route: "/moretabs/about",
   },
 ];
+  
 
   const handleExit = () => {
     router.replace("/");
@@ -59,7 +58,11 @@ const menuItems = [
       </View>
 
       {menuItems.map((item) => (
-        <TouchableOpacity key={item.title} style={styles.item}>
+        <TouchableOpacity 
+          key={item.title} 
+          style={styles.item}
+          onPress={() => router.push(item.route)}
+        >
           <View style={styles.row}>
             <Ionicons name={item.icon} size={20} color="#333" />
             <Text style={styles.itemText}>{item.title}</Text>

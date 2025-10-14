@@ -14,7 +14,7 @@ export default function Browse() {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.header}>
-        <Ionicons name="menu" size={24} color="#000" />
+        
         <Image
           source={require("../tab/img/logo.png")}style={styles.logo}
           resizeMode="contain"
@@ -106,6 +106,8 @@ const styles = StyleSheet.create({
   logo: {
     width: 120,
     height: 40,
+    marginLeft: 132,
+    marginTop: 15,
   },
   banner: {
     width: "100%",

@@ -37,7 +37,7 @@ export default function signup() {
       />
 
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Sign up</Text>
+        <Text style={styles.buttonText}>Register</Text>
       </TouchableOpacity>
 
       <Text style={styles.footer}>
